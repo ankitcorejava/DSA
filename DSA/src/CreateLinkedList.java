@@ -1,6 +1,7 @@
 
 public class CreateLinkedList {
 
+	
 	private static class Node {
 		private int value;
 		private Node next;
