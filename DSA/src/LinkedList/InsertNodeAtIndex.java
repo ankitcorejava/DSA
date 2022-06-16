@@ -1,5 +1,6 @@
+package LinkedList;
 
-public class DeleteNodeAtIndex {
+public class InsertNodeAtIndex {
 
 	private static class Node {
 		private int value;
@@ -74,40 +75,8 @@ public class DeleteNodeAtIndex {
 
 		}
 
-		public void deleteFromStart() {
-			if (size() == 0) {
-				return;
-			}
-			if (size() == 1) {
-				this.head = null;
-				this.tail = null;
-				this.size = 0;
-			} else {
-				this.head = this.head.next;
-				this.size--;
-			}
-		}
-
-		public void deleteAtIndex(int index) {
-			if (index == 0) {
-				deleteFromStart();
-				return;
-			} else {
-				int idx = 0;
-				Node previous = null;
-				Node current = this.head;
-				while (idx != index) {
-					previous = current;
-					current = current.next;
-					idx++;
-				}
-				previous.next = current.next;
-				this.size--;
-
-			}
-		}
-
 		// Display
+
 		public void display() {
 			Node current = this.head;
 			while (current != null) {
@@ -123,20 +92,7 @@ public class DeleteNodeAtIndex {
 		linkedList.addNodeAtStart(20);
 		linkedList.addNodeAtStart(30);
 		linkedList.addNodeAtIndex(2, 40);
-		linkedList.addNodeAtIndex(-1, 420);
-		System.out.println("--------Post Insertion------------");
-		linkedList.display();
-
-		linkedList.deleteFromStart();
-		System.out.println();
-		System.out.println("--------Post Deletion From Start------------");
-		linkedList.display();
-		
-		linkedList.addNodeAtStart(230);
-		linkedList.addNodeAtStart(350);
-		linkedList.deleteAtIndex(3);
-		System.out.println();
-		System.out.println("--------Post Deletion At Given Index------------");
+		linkedList.addNodeAtIndex(-1,420);
 		linkedList.display();
 
 	}
