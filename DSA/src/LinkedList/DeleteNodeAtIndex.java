@@ -108,6 +108,26 @@ public class DeleteNodeAtIndex {
 			}
 		}
 
+		public void deleteAtLast() {
+
+			if (size() <= 1) {
+				deleteFromStart();
+				return;
+			}
+
+			else {
+				Node previous = null;
+				Node current = this.head;
+				while (current.next != null) {
+					previous = current;
+					current = current.next;
+				}
+				previous.next = null;
+				this.size--;
+
+			}
+		}
+
 		// Display
 		public void display() {
 			Node current = this.head;
@@ -132,12 +152,24 @@ public class DeleteNodeAtIndex {
 		System.out.println();
 		System.out.println("--------Post Deletion From Start------------");
 		linkedList.display();
-		
+
 		linkedList.addNodeAtStart(230);
 		linkedList.addNodeAtStart(350);
 		linkedList.deleteAtIndex(3);
 		System.out.println();
-		System.out.println("--------Post Deletion At Given Index------------");
+		System.out.println("-------- Post Deletion At Given Index ------------");
+		linkedList.display();
+
+		linkedList.addNodeAtStart(430);
+		linkedList.addNodeAtStart(750);
+		
+		System.out.println();
+		System.out.println("-------- Post Addition ------------");
+		linkedList.display();
+		
+		linkedList.deleteAtLast();
+		System.out.println();
+		System.out.println("-------- Post Deletion From End ------------");
 		linkedList.display();
 
 	}
